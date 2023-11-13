@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="807d8690-e397-40b2-af93-97590ccd1cbc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core_jackson_databind_2_13_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Family_Feud5.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Json.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.jsonl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Experiments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/out/production/LearningTime/LearningTime.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/LearningTime.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/out/production/LearningTime/LearningTime.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Pinky laptop\IdeaProjects\Family Feud5\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FamilyFeudMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.familyfeud.code.FamilyFeudMain" />
+      <module name="Family_Feud5" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.familyfeud.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Family_Feud5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Family_Feud5" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FamilyFeudMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
