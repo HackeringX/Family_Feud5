@@ -7,6 +7,7 @@ import static com.LearningTime.BusTicketingSystem.system;
 import static com.LearningTime.FizzBuzz.fizzBuzzMain;
 import static com.LearningTime.MortgageCalculator.calculations;
 import static com.LearningTime.CreateFile.test;
+import static com.LearningTime.Experiments.actual;
 
 public class Main {
     public static void main(String[] args) throws NoSuchMethodException {
@@ -59,6 +60,12 @@ public class Main {
                     //Does whatever there is in fizzBuzzMain()
                     test();
                 break;
+
+                case "actual":
+                    //System.out.println("You have called the method com.LearningTime.CreateFile.test\n");
+                    //Does whatever there is in fizzBuzzMain()
+                    actual();
+                    break;
 
                 default:
                     //There is no other method that the user can access, so it will throw an exception

@@ -4,27 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="807d8690-e397-40b2-af93-97590ccd1cbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_fasterxml_jackson_core_jackson_databind_2_13_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Family_Feud5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Json.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.jsonl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train.jsonl" afterDir="false" />
+    <list default="true" id="807d8690-e397-40b2-af93-97590ccd1cbc" name="Default Changelist" comment="New Stuff">
       <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Experiments.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/out/production/LearningTime/LearningTime.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/LearningTime.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/out/production/LearningTime/LearningTime.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +90,14 @@
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="New Stuff">
+      <created>1699917208334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699917208334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,5 +110,25 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New Stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Stuff" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

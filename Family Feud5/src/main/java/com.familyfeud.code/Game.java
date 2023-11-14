@@ -51,7 +51,7 @@ public class Game {
     public String toString() {
         String scoreTable = "";
 
-        scoreTable += "Game Name: " + name + "\n---------------------------\n" + "           User    Computer";
+        scoreTable += "Game Name: " + name + "\n---------------------------\n" + "           "+ players[0].getName() + "    " + players[1].getName();
         for (int i = 0; i < scores.size(); i++) {
             scoreTable += "\nRound " + (i + 1) + ":\t" + scores.get(i)[0] + "\t" + scores.get(i)[1];
         }
