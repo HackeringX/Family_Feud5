@@ -41,6 +41,10 @@ public class Player {
         this.name = name;
     }
 
+    /**
+    * This adds a round to the record of the player. It also recalculates the total.
+    * @param Score received
+    */
     public void addRound(int score) {
         scores.add(score);
 
