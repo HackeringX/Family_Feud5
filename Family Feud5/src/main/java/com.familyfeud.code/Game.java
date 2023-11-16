@@ -44,10 +44,18 @@ public class Game {
         return history;
     }
 
+    /*
+    * This method is run when a game is finished. The game is added to the static variable of game history.
+    */
     public void finish() {
         history.add(this);
     }
 
+    /**
+    * Allows the game to add a round
+    * Updates the players scores, the game scores, and the totals from the players.
+    * @param The scores for the round
+    */
     public void addRound(int[] round) {
         scores.add(round);
 
@@ -58,6 +66,10 @@ public class Game {
 
     }
 
+    /**
+    * Shows the scoreboard for the current game/previous game to the last round and the total
+    * @return The string for scoreboard
+    */
     public String toString() {
         String scoreTable = "";
 
