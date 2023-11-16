@@ -21,7 +21,7 @@ public class FamilyFeudMain extends Thread {
         ArrayList<JsonNode> list = new ArrayList<>();
         Scanner  input = new Scanner(System.in);
 
-        File data = new File("C:\\Users\\Pinky laptop\\IdeaProjects\\Family Feud5\\train.jsonl");
+        File data = new File("");
 
         try {
             Scanner fileReader = new Scanner(data);
@@ -285,66 +285,20 @@ public class FamilyFeudMain extends Thread {
 
         }
 
-        /*try {
-            JsonNode node = Json.parse(src);
-
-            /*
-            Refer back to the following:
-            String str = node.get("answers").get("clusters").get(node.get("metadata").get("id").asText() + ".1").get("answers").toString();
-            String[] list = str.replaceAll("\\[|]", "").split(",");
-            System.out.println(list[0]); // The answer
-
-            Use this to find how many answers there are:
-            node.size(); \\ Replace node with the expression for str
-
-            Test node.traverse() to see how it works
-
-            System.out.println(node.get("name"));
-
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-
-
-
-        System.out.println("Hi");
-
-        f1.start();
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        System.out.print("\0337");
-        System.out.print("\033[1A\r\033[K");
-        System.out.println("Hi, again.");
-        System.out.print("\0338");
-
-        //System.out.println("Hi");
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        running = false;
-
-        System.out.println("\033[K");
-        System.out.print("Enter to continue: ");*/
-
-
-
-
-
+        
     }
 
+    /**
+    * A shortcut method to clear the screen.
+    */
     public static void clearScreen() {
         System.out.println("\033[H\033[2J");
         System.out.flush();
     }
 
+    /*
+    * This method run on a different thread and allows the scanner to keep scanning while tasks in the main thread is running.
+    */
     public void run() {
         Scanner primeTime = new Scanner(System.in);
 
