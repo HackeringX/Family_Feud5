@@ -5,15 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="807d8690-e397-40b2-af93-97590ccd1cbc" name="Default Changelist" comment="New Stuff">
-      <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Experiments.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/out/production/LearningTime/LearningTime.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/LearningTime.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../out/production/IdeaProjects/out/production/LearningTime/LearningTime.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Family_Feud5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Family_Feud5.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Computer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.familyfeud.code/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../LearnJava/src/com/LearningTime/com/LearningTime/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +34,19 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProjectId" id="2YEdZSQMXje1N1hNyYmaYsAam4p" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -69,19 +72,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Family_Feud5" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Family_Feud5" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.FamilyFeudMain" />
@@ -97,7 +87,21 @@
       <option name="project" value="LOCAL" />
       <updated>1699917208334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="New Stuff">
+      <created>1699935826750</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699935826750</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="807d8690-e397-40b2-af93-97590ccd1cbc" name="Default Changelist" comment="New Stuff" />
+      <created>1700094831057</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700094831057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,25 +114,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="New Stuff" />
     <option name="LAST_COMMIT_MESSAGE" value="New Stuff" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com.familyfeud.code/FamilyFeudMain.java</url>
-          <line>191</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

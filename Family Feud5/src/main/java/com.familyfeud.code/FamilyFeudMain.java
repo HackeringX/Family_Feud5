@@ -8,19 +8,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class FamilyFeudMain extends Thread {
 
-    private static Scanner  input = new Scanner(System.in);
     private static boolean running = false;
     private static String ans = "";
 
     public static void main(String[] args) {
 
         ArrayList<JsonNode> list = new ArrayList<>();
-        ArrayList<Game> history = new ArrayList<>();
-        FamilyFeudMain f1 = new FamilyFeudMain();
+        Scanner  input = new Scanner(System.in);
 
         File data = new File("C:\\Users\\Pinky laptop\\IdeaProjects\\Family Feud5\\train.jsonl");
 
@@ -30,7 +29,6 @@ public class FamilyFeudMain extends Thread {
                 list.add(Json.parse(fileReader.nextLine()));
             }
 
-            System.out.println(list.get((int) (Math.random() * list.size())).get("metadata").get("id"));
 
         } catch (FileNotFoundException | JsonProcessingException e) {
             e.printStackTrace();
@@ -38,184 +36,251 @@ public class FamilyFeudMain extends Thread {
 
         // Start of the program
 
+        clearScreen();
         System.out.print("Welcome to Family Feud The Java Game! ");
         String choice;
 
+        label:
         while (true) {
             System.out.print("Type \"new\" to start a new game, and type \"history\" to view history of games. If you want to exit, type \"exit\": ");
             choice = input.nextLine().toLowerCase().trim();
             clearScreen();
 
-            if (choice.equals("new") || choice.equals("n")) {
+            switch (choice) {
+                case "new":
+                case "n":
 
-                System.out.print("What would you like to name this game? ");
-                String name = input.nextLine().strip();
+                    System.out.print("What would you like to name this game? ");
+                    String name = input.nextLine().strip();
 
-                Player user = new Player("User");
-                Computer computer = new Computer();
-                Game newGame = new Game(name, user, computer);
+                    Player user = new Player("User");
+                    Computer computer = new Computer();
+                    Game newGame = new Game(name, user, computer);
 
-                while (true) {
-                    System.out.print("Which difficulty do you wish to play on? Options are \"easy\", \"medium\", or \"hard\": ");
-                    choice = input.nextLine().toLowerCase().trim();
+                    while (true) {
+                        System.out.print("Which difficulty do you wish to play on? Options are \"easy\", \"medium\", or \"hard\": ");
+                        choice = input.nextLine().toLowerCase().trim();
 
-                    if (choice.equals("easy") || choice.equals("medium") || choice.equals("hard")) {
-                        computer.setDifficulty(choice);
+                        if (choice.equals("easy") || choice.equals("medium") || choice.equals("hard")) {
+                            computer.setDifficulty(choice);
+                            clearScreen();
+                            break;
+                        } else {
+                            System.out.println("That is not a valid option, try again.\n");
+                        }
+                    }
+
+                    int randIndex;
+                    int lastRandIndex = -1;
+
+                    for (int z = 1; z <= 3; z++) {
+                        ans = "";
+                        System.out.print("Click ENTER to start Round " + z + ".");
+                        input.nextLine();
                         clearScreen();
-                        break;
-                    } else {
-                        System.out.println("That is not a valid option, try again.\n");
-                    }
-                }
 
+                        FamilyFeudMain f1 = new FamilyFeudMain();
 
-                System.out.print("Click ENTER to start Round 1.");
-                input.nextLine();
-                clearScreen();
+                        int timeLeft = 60;
+                        System.out.println("Time Left: " + timeLeft);
 
-                // Start
+                        randIndex = (int) (Math.random() * list.size());
+                        while (list.get(randIndex).get("answers").get("clusters").size() < 5 || randIndex == lastRandIndex) {
+                            randIndex = (int) (Math.random() * list.size());
+                        }
 
-                int timeLeft = 60;
-                System.out.println("Time Left: " + timeLeft);
+                        lastRandIndex = randIndex;
+                        randIndex = 3819;
 
-                int randIndex = (int) (Math.random() * list.size());
-                while (list.get(randIndex).get("answers").get("clusters").size() < 5) {
-                    randIndex = (int) (Math.random() * list.size());
-                }
+                        JsonNode question = list.get(randIndex);
+                        String[][] answers = new String[5][];
+                        String[] starts = new String[5];
+                        int[] worth = new int[5];
+                        ArrayList<String> used = new ArrayList<>();
 
-                JsonNode question = list.get(randIndex);
-                String[][] answers = new String[5][];
-                String[] starts = new String[5];
-                int[] worth = new int[5];
+                        System.out.println(question.get("question").get("original") + "\nAnswers:");
+                        // .get("metadata").get("id").asText() + ".1"
+                        for (int i = 0; i < 5; i++) {
+                            worth[i] = question.get("answers").get("clusters").get(question.get("metadata").get("id").asText() + "." + i).get("count").asInt();
+                            starts[i] = "Answer " + (i + 1) + " (" + worth[i] + "): ";
+                            System.out.println(starts[i]);
+                            String[] arrayList = question.get("answers").get("clusters").get(question.get("metadata").get("id").asText() + "." + i).get("answers").toString().replaceAll("\\[|]", "").replaceAll("\"", "").split("/");
+                            answers[i] = Arrays.stream(arrayList).map(s -> s.toLowerCase().strip()).toArray(String[]::new);
+                        }
 
-                System.out.println(question.get("question").get("original") + "\nAnswers:");
-                // .get("metadata").get("id").asText() + ".1"
-                for (int i = 0; i < 5; i++) {
-                    worth[i] = question.get("answers").get("clusters").get(question.get("metadata").get("id").asText() + "." + i).get("count").asInt();
-                    starts[i] = "Answer " + (i + 1) + " (" + worth[i] + "): ";
-                    System.out.println(starts[i]);
-                    answers[i] = question.get("answers").get("clusters").get(question.get("metadata").get("id").asText() + "." + i).get("answers").toString().replaceAll("\\[|]", "").split(",");
-                }
+                        int userScore = 0;
+                        int numberOfUserMistakes = 0;
+                        String userMistakes = "";
+                        System.out.println("\nUser Score: " + userScore + "\nUser Mistakes: " + userMistakes + "(" + numberOfUserMistakes + ")");
 
-                int userScore = 0;
-                int numberOfUserMistakes = 0;
-                String userMistakes = "";
-                System.out.println("\nUser Score: " + userScore + "\nUser Mistakes: " + userMistakes);
+                        int computerScore = 0;
+                        int numberOfComputerMistakes = 0;
+                        String computerMistakes = "";
+                        computer.setWorths(worth);
+                        computer.startRound();
+                        System.out.println("\nComputer Score: " + computerScore + "\nComputer Mistakes: " + computerMistakes + "\n");
 
-                System.out.println("\nComputer Score: 0" + "\nComputer Mistakes: " + "\n");
+                        running = true;
+                        f1.start();
 
-                running = true;
-                f1.start();
+                        while (timeLeft > 0) {
+                            int correctIndex = 0;
 
+                            try {
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
 
-                while (timeLeft > 0) {
-                    int correctIndex = 0;
+                            System.out.print("\0337");
+                            System.out.print("\033[15A\r\033[K");
+                            timeLeft--;
+                            System.out.println("Time Left: " + timeLeft);
+                            System.out.print("\0338");
 
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                            if (ans.length() > 0) {
+                                boolean correct = false;
 
-                    System.out.print("\0337");
-                    System.out.print("\033[15A\r\033[K");
-                    timeLeft--;
-                    System.out.println("Time Left: " + timeLeft);
-                    System.out.print("\0338");
+                                for (int i = 0; i < answers.length; i++) {
+                                    String[] aList = answers[i];
 
-                    if (ans.length() > 0) {
-                        boolean correct = false;
+                                    for (String a : aList) {
+                                        if (ans.toLowerCase().strip().equals(a)) {
+                                            correct = true;
+                                            correctIndex = i;
+                                            break;
+                                        }
+                                    }
+
+                                }
+
+                                if (correct) {
+
+                                    if (!used.contains(ans)) {
+                                        userScore += worth[correctIndex];
+
+                                        System.out.print("\0337");
+                                        System.out.print("\033[6A\r\033[K");
+                                        System.out.println("User Score: " + userScore);
+                                        System.out.print("\0338");
+
+                                        System.out.print("\0337");
+                                        System.out.print("\033[" + (7 + (5 - correctIndex)) + "A\r\033[K");
+                                        System.out.println(starts[correctIndex] + Arrays.toString(answers[correctIndex]));
+                                        System.out.print("\0338");
+
+                                        used.addAll(Arrays.asList(answers[correctIndex]));
+                                    }
+
+                                    ans = "";
+
+                                } else {
+                                    ans = "";
+                                    numberOfUserMistakes++;
+                                    if (3 - numberOfUserMistakes < 0) {
+                                        userScore -= 5;
+                                    }
+                                    userMistakes += "X";
+
+                                    System.out.print("\0337");
+                                    System.out.print("\033[6A\r\033[K");
+                                    System.out.println("User Score: " + userScore);
+                                    System.out.print("\0338");
+
+                                    System.out.print("\0337");
+                                    System.out.print("\033[5A\r\033[K");
+                                    System.out.println("User Mistakes: " + userMistakes);
+                                    System.out.print("\0338");
+                                }
+
+                            }
+
+                            int botAns = computer.playGame(timeLeft);
+                            if (botAns != 0) {
+                                if (botAns == -5) {
+                                    computerMistakes += "X";
+                                    numberOfComputerMistakes++;
+                                    if (numberOfComputerMistakes <= 3) {
+                                        computerScore -= botAns;
+                                    }
+                                }
+                                computerScore += botAns;
+
+                                System.out.print("\0337");
+                                System.out.print("\033[3A\r\033[K");
+                                System.out.println("Computer Score: " + computerScore);
+                                System.out.print("\0338");
+
+                                System.out.print("\0337");
+                                System.out.print("\033[2A\r\033[K");
+                                System.out.println("Computer Mistakes: " + computerMistakes);
+                                System.out.print("\0338");
+
+                            }
+
+                        }
 
                         for (int i = 0; i < answers.length; i++) {
-                            String[] aList = answers[i];
-
-                            for (String a : aList) {
-                                if (ans.equals(a)) {
-                                    correct = true;
-                                    correctIndex = i;
-                                    userScore += worth[i];
-                                    break;
-                                }
-                            }
-
-                        }
-
-                        if (correct) {
-                            ans = "";
                             System.out.print("\0337");
-                            System.out.print("\033[6A\r\033[K");
-                            System.out.println("User Score: " + userScore);
-                            System.out.print("\0338");
-
-                            System.out.print("\0337");
-                            System.out.print("\033["+ (6 + (5 - correctIndex)) + "A\r\033[K");
-                            System.out.println(starts[correctIndex] + Arrays.toString(answers[correctIndex]));
-                            System.out.print("\0338");
-
-                        } else {
-                            ans = "";
-                            numberOfUserMistakes++;
-                            if (3 - numberOfUserMistakes < 0) {
-                                userScore -= 5;
-                            }
-                            userMistakes += "X";
-
-                            System.out.print("\0337");
-                            System.out.print("\033[6A\r\033[K");
-                            System.out.println("User Score: " + userScore);
-                            System.out.print("\0338");
-
-                            System.out.print("\0337");
-                            System.out.print("\033[5A\r\033[K");
-                            System.out.println("User Mistakes: " + userMistakes);
+                            System.out.print("\033[" + (7 + (5 - i)) + "A\r\033[K");
+                            System.out.println(starts[i] + Arrays.toString(answers[i]));
                             System.out.print("\0338");
                         }
 
+                        newGame.addRound(new int[]{userScore, computerScore});
+
+                        running = false;
+                        ans = "";
+                        System.out.println("\033[K");
+                        System.out.print("\nEnter to continue: ");
+
+                        while (f1.isAlive()) {
+                            try {
+                                Thread.sleep(100);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        clearScreen();
+                        System.out.println("Results after Round " + z + ":");
+                        System.out.println(newGame.toString());
+                        System.out.println("\nWinner of Round: " + ((userScore == computerScore) ? "Nobody! (Tie)" : ((userScore > computerScore) ? "User" : "Computer")));
                     }
 
+                    newGame.finish();
+                    System.out.println("\nWinner of Game: " + ((user.getTotal() == computer.getTotal()) ? "Nobody! (Tie)" : ((user.getTotal() > computer.getTotal()) ? "User" : "Computer")));
 
+                    break;
 
-                }
+                case "history":
+                case "h":
 
-                running = false;
-                System.out.println("\033[K");
-                System.out.print("Enter to continue: ");
+                    ArrayList<Game> history = Game.getHistory();
 
-                while (f1.isAlive()) {
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                // End
-
-            } else if (choice.equals("history") || choice.equals("h")) {
-
-                while (true) {
                     if (history.size() == 0) {
                         System.out.print("You have not played any games. Come back when you have. Click ENTER to go back.");
                         input.nextLine();
                         clearScreen();
                         break;
+
+                    } else {
+                        for (Game game : history) {
+                            System.out.println(game + "\n");
+                        }
+                        System.out.println("Click ENTER to continue:");
+                        input.nextLine();
+                        clearScreen();
+                        break;
                     }
 
-                    for (int i = 0; i < history.size(); i++) {
-                        System.out.println(history.toString());
-                    }
-                    System.out.println("Click ENTER to continue:");
-                    input.nextLine();
-                    clearScreen();
+                case "exit":
+                case "e":
+                    break label;
+
+                default:
+                    System.out.println("That is not a valid option; try again.\n");
                     break;
-
-                }
-
-            } else if (choice.equals("exit") || choice.equals("e")) {
-                break;
-
-            } else {
-                System.out.println("That is not a valid option; try again.\n");
             }
 
         }
